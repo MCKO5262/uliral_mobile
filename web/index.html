@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <meta name="apple-mobile-web-app-capable" content="yes"> <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="shop_app">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>shop_app</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    const serviceWorkerVersion = null;
+  </script>
+  <script src="flutter.js" defer></script>
+
+  <script type="module">
+    // Firebase SDK-г импортлох.
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js';
+    // Энд onBackgroundMessage-г импортлох шаардлагагүй!
+    import { getMessaging } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-messaging.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBS9sf90DIDgyB_X8wiUuh7eyyjUiiApT8", // Таны жинхэнэ config
+      authDomain: "mobile-shalgalt.firebaseapp.com",
+      projectId: "mobile-shalgalt",
+      storageBucket: "mobile-shalgalt.firebasestorage.app",
+      messagingSenderId: "258871947207",
+      appId: "1:258871947207:web:16afb5adca716845c5f3e2",
+      measurementId: "G-BEG0191N1R"
+    };
+
+    // Firebase-ийг эхлүүлэх
+    const app = initializeApp(firebaseConfig);
+    // Messaging instance авах (token авахад хэрэглэгдэнэ)
+    const messaging = getMessaging(app);
+
+    // !!! ЭНД ONBACKGROUNDMESSAGE АШИГЛАХГҮЙ !!!
+    // Background мэдэгдлийг firebase-messaging-sw.js файл зохицуулна.
+
+    // Service Worker-г бүртгэх
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/firebase-messaging-sw.js') // Файлын нэр, байршил зөв эсэхийг шалгаарай
+        .then((registration) => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch((error) => {
+          console.error('Service Worker registration failed:', error);
+        });
+    }
+  </script>
+</head>
+<body>
+  <script>
+    window.addEventListener('load', function(ev) {
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+C:/Users/Dell Inspiron 7620/Desktop/Hicheel/Mobile/Mobile/lab12/flutter_shop_app-start/android/app/.cxx/Debug/1c1r695j/x86/CMakeFiles/edit_cache.dir
+C:/Users/Dell Inspiron 7620/Desktop/Hicheel/Mobile/Mobile/lab12/flutter_shop_app-start/android/app/.cxx/Debug/1c1r695j/x86/CMakeFiles/rebuild_cache.dir

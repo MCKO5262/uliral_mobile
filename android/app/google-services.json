@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "258871947207",
+    "project_id": "mobile-shalgalt",
+    "storage_bucket": "mobile-shalgalt.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258871947207:android:f7bc3a10d7c65541c5f3e2",
+        "android_client_info": {
+          "package_name": "com.example.shop_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5YPgqHQ6n_15bNGTwHf2D9OygN036Eyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
