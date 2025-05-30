@@ -1,45 +1,73 @@
 name: shop_app
 description: A new Flutter project.
 
-publish_to: 'none'
-version: 1.0.0+1
+publish_to: 'none'  # Энэ нь pub.dev руу нийтлэхгүй гэсэн үг
+version: 1.0.0+1    # App-ийн хувилбар
 
 environment:
-  sdk: '^3.7.0' # Энэ хэвээрээ байна
+  sdk: '^3.7.0'      # Flutter SDK-ийн шаардлагатай хувилбар
 
 dependencies:
   flutter:
     sdk: flutter
 
+  # iOS-т зориулсан icon багц
   cupertino_icons: ^1.0.2
+
+  # ✅ HTTP сан — API дуудлага хийхэд
   http: ^1.1.0
+
+  # ✅ Dynamic theme — UI өнгө удирдах (Android 12+ dynamic theming)
   dynamic_color: ^1.6.8
+
+  # ✅ JSON parsing-т ашиглагддаг annotation
   json_annotation: ^4.8.1
+
+  # ✅ State management — Provider ашиглах
   provider: ^6.1.1
 
-  # ✅ Firebase (web compatible & compatible versions)
+  # ✅ Firebase үндсэн сан
   firebase_core: ^3.13.1
+
+  # ✅ Firebase Auth (нэвтрэх, бүртгэх)
   firebase_auth: ^5.5.4
+
+  # ✅ Web дээр Firebase Auth ашиглах бол хэрэгтэй
   firebase_auth_web: ^5.14.3
+
+  # ✅ Firebase Firestore — өгөгдөл хадгалах
   cloud_firestore: ^5.6.0
+
+  # ✅ Firebase messaging-тай web дээр ажиллахад шаардлагатай
   js: ^0.7.2
-  firebase_messaging: ^15.2.6 # ЭНЭ ХУВИЛБАРЫГ ӨӨРЧИЛНӨ ҮҮ!
-  # firebase_messaging_web: # Энэ мөр хасагдсан хэвээрээ байна.
+
+  # ✅ Push notification (мэдэгдэл) авах
+  firebase_messaging: ^15.2.6
+  # ⚠️ Хэрвээ web-тэй ажиллах бол `firebase_messaging_web:`-г бас тохируулах шаардлагатай
+  # ⚠️ Хэрвээ Android/iOS дээр л ажиллах бол энэ мөр шаардлагагүй
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  # ✅ Code linting буюу кодын дүрэм шалгагч
   flutter_lints: ^2.0.0
+
+  # ✅ Автомат код генераци (json_serializable гэх мэт)
   build_runner: ^2.4.6
+
+  # ✅ JSON сериализ хийхэд ашиглана
   json_serializable: ^6.7.1
 
 flutter:
   uses-material-design: true
 
-
-# android:
-#   minSdkVersion: 23
-
+  # ✅ Хөрөнгүүдийг (assets) бүртгэж байна
   assets:
     - assets/products.json
     - assets/users.json
+
+# ⚠️ Зарим Android төхөөрөмж дээр Firebase push notification ажиллуулахын тулд
+# android/ буюу build.gradle файлууд дээр minSdkVersion 23 болгох шаардлагатай
+# android:
+#   minSdkVersion: 23
